@@ -4,16 +4,6 @@ pragma solidity ^0.8.18;
 import {ERC20Burnable, ERC20} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
-/*
- * @title: DecentralizedStableCoin
- * @author: Patrick "Long Course" Collins
- * Collateral: Exogenous (ETH & BTC)
- * Minting: Algorithmic
- * Relative Stability: Pegged to USD
- *
- * This is the contract meant to be governed by DSCEngine. This contract is just the ERC20 implementation of our stablecoin system.
- */
-// ERC20Burnable is an ERC20 token, hence, ERC20 constructor must be passed into it
 
 contract DecentralizedStableCoin is ERC20Burnable, Ownable {
     error DecentralizedStableCoin__MustBeMoreThanZero();

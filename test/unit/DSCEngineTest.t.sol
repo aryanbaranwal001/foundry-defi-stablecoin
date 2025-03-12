@@ -45,7 +45,7 @@ contract DSCEngineTest is Test {
         new DSCEngine(tokenAddresses, priceFeedAddresses, address(dsc));
     }
 
-    function testGetTokenAmountFromUsd() public {
+    function testGetTokenAmountFromUsd() public view {
         uint256 usdAmount = 100 ether;
         uint256 expectedWeth = 0.05 ether;
         uint256 actualWeth = dsce.getTokenAmountFromUsd(weth, usdAmount);
