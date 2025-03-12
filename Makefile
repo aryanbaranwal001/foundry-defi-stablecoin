@@ -40,8 +40,7 @@ dotest:
 deploy:
 	@forge script script/DeployOurToken.s.sol:DeployOurToken --rpc-url http://localhost:8545 --private-key $(DEFAULT_ANVIL_KEY) --broadcast
 
-install :
-	@forge install cyfrin/foundry-devops --no-commit &&  forge install openzeppelin/openzeppelin-contracts --no-commit && forge install https://github.com/smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit
+install :; forge install cyfrin/foundry-devops@0.1.0 --no-commit && forge install smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit && forge install foundry-rs/forge-std@v1.5.3 --no-commit && forge install openzeppelin/openzeppelin-contracts@v4.8.3 --no-commit
 
 
 deployMood:
