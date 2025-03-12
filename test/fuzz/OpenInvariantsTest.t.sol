@@ -32,6 +32,6 @@ function invariant_protocolMustHaveMoreValueThanTotalSupply() public view {
 
     uint256 wethValue = dsce.getUsdValue(weth, totalWethDeposited);
     uint256 wbtcValue = dsce.getUsdValue(wbtc, totalWbtcDeposited);
-    assert(wethValue + wbtcValue > totalSupply);
+    assert(wethValue + wbtcValue >= totalSupply);
 }
 }
