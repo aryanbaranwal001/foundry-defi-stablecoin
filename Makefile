@@ -41,7 +41,8 @@ deploy:
 	@forge script script/DeployOurToken.s.sol:DeployOurToken --rpc-url http://localhost:8545 --private-key $(DEFAULT_ANVIL_KEY) --broadcast
 
 install :
-	@forge install cyfrin/foundry-devops --no-commit &&  forge install openzeppelin/openzeppelin-contracts --no-commit
+	@forge install cyfrin/foundry-devops --no-commit &&  forge install openzeppelin/openzeppelin-contracts --no-commit && forge install https://github.com/smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit
+
 
 deployMood:
 	@forge script script/DeployMoodNft.s.sol:DeployMoodNft --rpc-url http://localhost:8545 --private-key $(DEFAULT_ANVIL_KEY) --broadcast
