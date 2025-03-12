@@ -30,7 +30,6 @@ contract HelperConfig is Script {
 
     NetworkConfig public activeNetworkConfig;
 
-
     function getSepoliaEthConfig() public view returns (NetworkConfig memory sepoliaNetworkConfig) {
         sepoliaNetworkConfig = NetworkConfig({
             wethUsdPriceFeed: 0x694AA1769357215DE4FAC081bf1f309aDC325306, // ETH / USD

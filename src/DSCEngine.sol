@@ -99,8 +99,6 @@ contract DSCEngine is ReentrancyGuard {
         s_DSCMinted[msg.sender] += amountDscToMint;
         _revertIfHealthFactorIsBroken(msg.sender);
         bool minted = i_dsc.mint(msg.sender, amountDscToMint);
-
-
     }
 
     function depositCollateralAndMintDsc() external {}

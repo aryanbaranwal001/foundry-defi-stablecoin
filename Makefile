@@ -58,8 +58,19 @@ decode:
 # script for flipping the moodNft
 
 # remappings = ["@openzeppelin=lib/openzeppelin-contracts/"]
-# import {Script} from "lib/forge-std/src/Script.sol";
-# import {Raffle} from "../src/Raffle.sol";
 # find . -type f | grep -i "base64"
 
-#Variables can be used in makefile
+# TEST CONTRACTS
+#
+#
+#
+
+# SCRIPTS CONTRACTS
+#
+# // SPDX-License-Identifier: MIT
+# pragma solidity ^0.8.18;
+#
+# import {Script} from "lib/forge-std/src/Script.sol";
+#
+
+
