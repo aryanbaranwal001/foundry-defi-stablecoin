@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.18;
+pragma solidity ^0.8.18;
 
-import {Test} from "forge-std/Test.sol";
+import {Test, console} from "forge-std/Test.sol";
 import {StdInvariant} from "forge-std/StdInvariant.sol";
 import {DeployDSC} from "../../script/DeployDSC.s.sol";
 import {DSCEngine} from "../../src/DSCEngine.sol";
@@ -39,5 +39,7 @@ contract InvariantsTest is StdInvariant, Test {
         uint256 wethValue = dsce.getUsdValue(weth, totalWethDeposited);
         uint256 wbtcValue = dsce.getUsdValue(wbtc, totalWbtcDeposited);
         assert(wethValue + wbtcValue >= totalSupply);
+        
+        console.log("Times Collateral Deposited Called: ", handler.timesDepositeCollateralIsCalled());
     }
 }

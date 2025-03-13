@@ -13,7 +13,7 @@ contract Handler is Test {
 
     ERC20Mock weth;
     ERC20Mock wbtc;
-
+    uint256 public timesDepositeCollateralIsCalled;
     uint256 MAX_DEPOSIT_SIZE = type(uint96).max;
 
     constructor(DSCEngine _engine, DecentralizedStableCoin _dsc) {
@@ -44,5 +44,6 @@ contract Handler is Test {
 
         dsce.depositCollateral(address(collateral), amountCollateral);
         vm.stopPrank();
+        timesDepositeCollateralIsCalled++;
     }
 }
