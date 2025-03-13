@@ -240,4 +240,8 @@ contract DSCEngine is ReentrancyGuard {
         (, int256 price,,,) = priceFeed.latestRoundData();
         return ((uint256(price) * ADDITIONAL_FEED_PRECISION) * amount) / PRECISION;
     }
+
+    function getCollateralTokens() public view returns (address[] memory) {
+        return s_collateralTokens;
+    }
 }

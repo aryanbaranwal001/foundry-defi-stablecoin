@@ -9,6 +9,7 @@ import {Test, console} from "forge-std/Test.sol";
 import {HelperConfig} from "../../script/HelperConfig.s.sol";
 import {ERC20Mock} from "lib/openzeppelin-contracts/contracts/mocks/ERC20Mock.sol";
 
+
 contract DSCEngineTest is Test {
     DeployDSC deployer;
     DecentralizedStableCoin dsc;
@@ -24,6 +25,7 @@ contract DSCEngineTest is Test {
     function setUp() public {
         deployer = new DeployDSC();
         (dsc, dsce, config) = deployer.run();
+
         (ethUsdPriceFeed, btcUsdPriceFeed, weth,,) = config.activeNetworkConfig();
 
         ERC20Mock(weth).mint(USER, STARTING_ERC20_BALANCE);
@@ -92,5 +94,4 @@ contract DSCEngineTest is Test {
         vm.stopPrank();
         _;
     }
-
 }
